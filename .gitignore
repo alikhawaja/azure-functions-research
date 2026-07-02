@@ -1,0 +1,24 @@
+# Azure Functions
+bin/
+obj/
+.python_packages/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+local.settings.json
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build output
+*.dll
+*.pdb

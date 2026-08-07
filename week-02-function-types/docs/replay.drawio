@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="Bxfa9eVM4UfIqsD03NuX">
+    <mxGraphModel dx="1038" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=16;fontStyle=1;align=center;fillColor=#f8cecc;strokeColor=#b85450;" value="Replay Mechanism — Step-by-Step (3 activities: A → B → C)" vertex="1">
+          <mxGeometry height="30" width="600" x="250" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="r1lbl" parent="1" style="text;html=1;fontSize=13;fontStyle=1;align=left;" value="Run 1 (initial)" vertex="1">
+          <mxGeometry height="20" width="200" x="30" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="r1a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="call A → schedule" vertex="1">
+          <mxGeometry height="40" width="150" x="30" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r1u" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="STOP + unload" vertex="1">
+          <mxGeometry height="40" width="130" x="210" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="r1h" parent="1" style="text;html=1;fontSize=11;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="history: ExecutionStarted, TaskScheduled(A), TaskCompleted(A → X)" vertex="1">
+          <mxGeometry height="24" width="480" x="370" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="r1e" edge="1" parent="1" source="r1a" style="endArrow=classic;html=1;" target="r1u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2lbl" parent="1" style="text;html=1;fontSize=13;fontStyle=1;align=left;" value="Run 2 (Task A is completed in history so schedules next Task B to be completed)" vertex="1">
+          <mxGeometry height="20" width="240" x="35" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r2a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="A: from history" vertex="1">
+          <mxGeometry height="40" width="120" x="30" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="r2b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="call B → schedule" vertex="1">
+          <mxGeometry height="40" width="150" x="220" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="r2u" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="STOP + unload" vertex="1">
+          <mxGeometry height="40" width="130" x="450" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="r2h" parent="1" style="text;html=1;fontSize=11;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&amp;nbsp;TaskScheduled(B), TaskCompleted(B → Y)" vertex="1">
+          <mxGeometry height="24" width="330" x="640" y="173" as="geometry" />
+        </mxCell>
+        <mxCell id="r2e1" edge="1" parent="1" source="r2a" style="endArrow=classic;html=1;" target="r2b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2e2" edge="1" parent="1" source="r2b" style="endArrow=classic;html=1;" target="r2u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3lbl" parent="1" style="text;html=1;fontSize=13;fontStyle=1;align=left;" value="Run 3 (Task A and Task B marked as completed so Task C gets scheduled and then orchestrator unloads)" vertex="1">
+          <mxGeometry height="20" width="240" x="35" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="r3a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;fontSize=12;" value="A: history" vertex="1">
+          <mxGeometry height="40" width="100" x="30" y="299" as="geometry" />
+        </mxCell>
+        <mxCell id="r3b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;fontSize=12;" value="B: history" vertex="1">
+          <mxGeometry height="40" width="100" x="175" y="299" as="geometry" />
+        </mxCell>
+        <mxCell id="r3c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;fontSize=12;" value="call C → schedule" vertex="1">
+          <mxGeometry height="40" width="150" x="330" y="299" as="geometry" />
+        </mxCell>
+        <mxCell id="r3u" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;fontSize=12;" value="unload" vertex="1">
+          <mxGeometry height="40" width="90" x="550" y="299" as="geometry" />
+        </mxCell>
+        <mxCell id="r3h" parent="1" style="text;html=1;fontSize=11;align=left;fillColor=#cdeb8b;strokeColor=#36393d;" value="&amp;nbsp;TaskScheduled(C), TaskCompleted(C → Z)" vertex="1">
+          <mxGeometry height="24" width="330" x="690" y="307" as="geometry" />
+        </mxCell>
+        <mxCell id="r3e1" edge="1" parent="1" source="r3a" style="endArrow=classic;html=1;" target="r3b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3e2" edge="1" parent="1" source="r3b" style="endArrow=classic;html=1;" target="r3c">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3e3" edge="1" parent="1" source="r3c" style="endArrow=classic;html=1;" target="r3u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4lbl" parent="1" style="text;html=1;fontSize=13;fontStyle=1;align=left;" value="Run 4 (As task C gets done the orchestration gets completed.)" vertex="1">
+          <mxGeometry height="20" width="400" x="50" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="r4a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontSize=12;fontColor=#000000;" value="A: history" vertex="1">
+          <mxGeometry height="40" width="90" x="35" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="r4b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontSize=12;fontColor=#000000;" value="B: history" vertex="1">
+          <mxGeometry height="40" width="90" x="180" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="r4c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontSize=12;fontColor=#000000;" value="C: history" vertex="1">
+          <mxGeometry height="40" width="90" x="350" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="r4done" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3c800;strokeColor=#B09500;fontSize=12;fontStyle=1;fontColor=#000000;" value="OrchestrationCompleted" vertex="1">
+          <mxGeometry height="40" width="180" x="600" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="r4e1" edge="1" parent="1" source="r4a" style="endArrow=classic;html=1;" target="r4b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4e2" edge="1" parent="1" source="r4b" style="endArrow=classic;html=1;" target="r4c">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4e3" edge="1" parent="1" source="r4c" style="endArrow=classic;html=1;" target="r4done">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

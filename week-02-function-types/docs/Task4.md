@@ -1,3 +1,9 @@
+Week 2 --- Durable Functions
+
+Function Type Architecture
+
+Effa & Maham | Supervisor: Dr. A.Khawaja | SProj 2026-27-DCW
+
 # Task 4: Stateful vs Stateless Decision Framework
 
 ## Overview

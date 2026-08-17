@@ -1,0 +1,27 @@
+### 1. Create a new chat session
+PUT http://localhost:7071/api/chats/test-chat-001
+Content-Type: application/json
+
+{
+  "instructions": "You are a helpful assistant for an Azure Functions course. Keep answers short."
+}
+
+### 2. Send the first message
+POST http://localhost:7071/api/chats/test-chat-001
+Content-Type: application/json
+
+{
+  "message": "My name is Ali. I'm learning about Azure Functions bindings."
+}
+
+### 3. Send a follow-up that depends on remembering message 2
+POST http://localhost:7071/api/chats/test-chat-001
+Content-Type: application/json
+
+{
+  "message": "What's my name, and what am I learning about?"
+}
+
+### 4. Read back the full conversation history
+GET http://localhost:7071/api/chats/test-chat-001
+Content-Type: application/json

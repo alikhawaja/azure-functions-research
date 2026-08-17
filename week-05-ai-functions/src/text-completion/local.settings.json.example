@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+
+    "AzureOpenAI__endpoint": "https://<your-aoai-resource>.openai.azure.com/",
+    "AzureOpenAI__credential": "managedidentity",
+
+    "CHAT_MODEL_DEPLOYMENT_NAME": "gpt-4o"
+  }
+}

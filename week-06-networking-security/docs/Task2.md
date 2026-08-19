@@ -13,7 +13,7 @@ Then we look at how both work together in one architecture, with a diagram.
 
 ### The problem it solves
 
-By default, your function app lives outside any VNet. It can only talk to things that have a public address on the internet. But many real systems don't want their database, storage account, or internal API exposed to the public internet at all they hide it inside a VNet.
+By default, your function app lives outside any VNet. It can only talk to things that have a public address on the internet. But many real systems don't want their database, storage account, or internal API exposed to the public internet at all: they hide it inside a VNet.
 
 So the question is: **how does a function app reach something that is hidden inside a private network?**
 
@@ -37,7 +37,7 @@ That's what regional VNet integration is for.
 - On the Flex Consumption plan, **all** outbound traffic automatically goes through the VNet once integration is set up: you don't need extra settings.
 - On Premium and Dedicated plans, you can turn on a setting called **"Route All"** to force all outbound traffic through the VNet (otherwise only some traffic goes through it by default).
 
-### analogy
+### Analogy
 
 Imagine your function app is an employee working from home (outside the office building). Normally they can only call people using public phone lines. VNet integration is like giving them a special extension that connects into the office's internal phone system: now they can also call people inside the building directly, privately, without going through the public phone network.
 
@@ -59,14 +59,14 @@ That's what private endpoints solve, but for inbound traffic to your function ap
 4. Once this is set up, your function app is **only reachable through that private IP**. The public internet can no longer reach it at all.
 5. Now, only things that are inside the VNet, or connected to it (through VPN, peering, or ExpressRoute), can call your function.
 
-### Key points, kept simple
+### Key points
 
 - This removes public exposure completely. It's stronger than IP restrictions, because IP restrictions just filter public traffic: private endpoints remove the public entry point entirely.
 - Only available on Flex Consumption, Premium, and Dedicated plans. Not available on the basic Consumption plan.
 - You usually need a **separate subnet** from the one used for outbound VNet integration. On Flex Consumption especially, the same subnet cannot be used for both purposes.
 - DNS matters here too: clients inside the VNet need to resolve your function app's name to its private IP, not its public one. This is normally done using Azure Private DNS zones linked to the VNet.
 
-### Simple analogy
+### Analogy
 
 Going back to the office analogy: a private endpoint is like removing the public phone number for your office completely, and only giving out an internal extension. Now, nobody outside the building can call in at all: only people already inside the building (or connected through a private line) can reach you.
 
@@ -93,11 +93,11 @@ The diagram below shows the full picture:
 - The function app uses **regional VNet integration** through a separate **integration subnet** to route outbound traffic.
 - That traffic reaches a **private endpoint subnet**, which connects privately to the **Cosmos DB / Storage account**, which has public access turned off.
 
-(See the diagram shared alongside this file.)
-![alt text](image.png)
+![Secured Azure Function App architecture: a client reaches the function app only through a private endpoint, the function app uses regional VNet integration to reach a private endpoint subnet, which connects privately to a Cosmos DB or Storage account with public access disabled.](./vnet-architecture-diagram.svg)
+
 ---
 
-##  glossary
+## Glossary
 
 - **VNet (Virtual Network):** Your own private network inside Azure.
 - **Subnet:** A smaller section inside a VNet, used for a specific purpose.
@@ -108,7 +108,7 @@ The diagram below shows the full picture:
 
 ---
 
-## comparison table
+## Comparison table
 
 | Feature | What it controls | Direction | Removes public access? |
 |---|---|---|---|

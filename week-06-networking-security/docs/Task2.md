@@ -95,7 +95,6 @@ The diagram below shows the full picture:
 
 (See the diagram shared alongside this file.)
 ![alt text](image.png)
-
 ---
 
 ##  glossary
